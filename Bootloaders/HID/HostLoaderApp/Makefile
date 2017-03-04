@@ -20,7 +20,7 @@ hid_bootloader_cli.exe: hid_bootloader_cli.c
 
 else ifeq ($(OS), MACOSX)
 CC ?= gcc
-SDK ?= /Developer/SDKs/MacOSX10.5.sdk
+SDK ?= SDK=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
 CFLAGS ?= -O2 -Wall
 hid_bootloader_cli: hid_bootloader_cli.c
 	$(CC) $(CFLAGS) -DUSE_APPLE_IOKIT -isysroot $(SDK) -o hid_bootloader_cli hid_bootloader_cli.c -Wl,-syslibroot,$(SDK) -framework IOKit -framework CoreFoundation
